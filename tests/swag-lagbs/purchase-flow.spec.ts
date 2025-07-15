@@ -5,19 +5,22 @@ import { LoginPage } from "@pages/swag-labs/LoginPage";
 test.describe.configure({ mode: "serial" });
 test.describe("Shopping Cart Testing should login into the page with a valid user and password", () => {
   let page: Page;
+  const baseUrl = process.env.BASE_URL;
+  const username = process.env.SWAG_LABS_VALID_USERNAME;
+  const password = process.env.SWAG_LABS_VALID_PASSWORD;
   test.beforeAll(async ({ browser }) => {
     const context = await browser.newContext();
     page = await context.newPage();
     //Login
     const loginPage = new LoginPage(page);
-    await loginPage.navigate(baseUrl.url);
-    await loginPage.login(baseUrl.valid_user, baseUrl.valid_password);
+    await loginPage.navigate(baseUrl);
+    await loginPage.login(username, password);
     await loginPage.expectAppLogoVisible();
   });
 
   test("then should show the main page", async () => {
     // Title
-    await page.goto("https://www.saucedemo.com/inventory.html");
+    await page.goto(`${baseUrl}/inventory.html`);
     await expect(page.locator("div.app_logo")).toBeVisible();
 
     //Dropdown
@@ -45,7 +48,7 @@ test.describe("Shopping Cart Testing should login into the page with a valid use
   });
 
   test("then should add and remove products into the cart", async () => {
-    await page.goto("https://www.saucedemo.com/inventory.html");
+    await page.goto(`${baseUrl}/inventory.html`);
     await expect(page.locator("div.app_logo")).toBeVisible();
     //Add products to cart
     //From button
@@ -70,7 +73,7 @@ test.describe("Shopping Cart Testing should login into the page with a valid use
     await expect(cartIcon).toHaveText("2");
   });
   test("then should complete the purchase in the cart view", async () => {
-    await page.goto("https://www.saucedemo.com/inventory.html");
+    await page.goto(`${baseUrl}/inventory.html`);
     await expect(page.locator("div.app_logo")).toBeVisible();
     //Go to cart
     await page.locator(".shopping_cart_link").click();
