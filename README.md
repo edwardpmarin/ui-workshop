@@ -13,3 +13,7 @@ $ npx playwright test tests/swag-lagbs/purchase-flow.spec.ts
 
 Show report:
 $ npx playwright show-report
+
+Environment:
+$ ENV=dev npx playwright test tests/swag-lagbs/purchase-flow.spec.ts
+ENV=dev npx playwright test tests/swag-lagbs/loginUsingFixture.spec.ts

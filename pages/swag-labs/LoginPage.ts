@@ -1,6 +1,9 @@
-// pages/LoginPage.ts
-import { Page, expect } from '@playwright/test';
-
+//This is a POM (Page Object Model) class for the Login Page of the Swag Labs application.
+// It encapsulates the functionality of the login page in a class
+// that includes methods for navigating to the page, filling in the username and password,
+// submitting the form, and checking for the visibility of the app logo.
+// It uses Playwright for browser automation and testing.
+import { Page, expect } from "@playwright/test";
 export class LoginPage {
   readonly page: Page;
 
@@ -11,7 +14,6 @@ export class LoginPage {
   async navigate(baseUrl: string) {
     await this.page.goto(baseUrl);
   }
-
 
   async fillUsername(username: string) {
     const usernameInput = this.page.locator('[data-test="username"]');
@@ -28,10 +30,10 @@ export class LoginPage {
   }
 
   async expectAppLogoVisible() {
-    await expect(this.page.locator('div.app_logo')).toBeVisible();
+    await expect(this.page.locator("div.app_logo")).toBeVisible();
   }
 
-    async login(username: string, password: string) {
+  async login(username: string, password: string) {
     await this.fillUsername(username);
     await this.fillPassword(password);
     await this.submit();

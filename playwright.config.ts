@@ -4,9 +4,12 @@ import { defineConfig, devices } from '@playwright/test';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
+// Uncomment the following lines if you want to use dotenv to load environment variables directly in the config file.
 // import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
+// import path from 'path'; // Use path to resolve the .env file location (enable module resolution "esModuleInterop": true, if necessary)
+// const env = process.env.ENV || 'local'; // Puedes pasar ENV=staging al correr
+// const envPath = path.resolve(__dirname, 'config', `.env.${env}`);
+// dotenv.config({ path: envPath });
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -15,6 +18,8 @@ export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
+  // get the environment variables from the .env file
+  globalSetup: require.resolve('@config/global-setup'),
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
