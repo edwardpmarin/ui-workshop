@@ -1,9 +1,11 @@
 //This test file is for testing the login functionality of the Swag Labs application.
 // It uses Playwright for browser automation and imports the LoginPage class to interact
 import { test } from "@playwright/test";
-import { LoginPage } from "@pages/swag-labs/LoginPage";
+import { LoginPage } from "@swag-labs/pages/LoginPage";
 
 const baseUrl = process.env.BASE_URL;
+console.log("Env Variables. baseurl:", baseUrl);
+
 const username = process.env.SWAG_LABS_VALID_USERNAME;
 const password = process.env.SWAG_LABS_VALID_PASSWORD;
 

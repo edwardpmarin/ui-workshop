@@ -17,3 +17,7 @@ $ npx playwright show-report
 Environment:
 $ ENV=dev npx playwright test tests/swag-lagbs/purchase-flow.spec.ts
 ENV=dev npx playwright test tests/swag-lagbs/loginUsingFixture.spec.ts
+
+
+To run only one app in a specific environment
+$ ENV=dev npm run test:swag-labs

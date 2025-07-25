@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Learning UI atuomation",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:swag-labs": "playwright test --config=apps/swag-labs/playwright.config.ts",
+    "test:herokuapp": "playwright test --config=apps/herokuapp/playwright.config.ts"  
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

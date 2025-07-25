@@ -3,7 +3,7 @@
 // The fixture is used to perform login actions before running tests, ensuring that the user is logged in
 // before any test that requires authentication is executed.
 import { test as base, expect, Page } from "@playwright/test";
-import { LoginPage } from "@pages/swag-labs/LoginPage";
+import { LoginPage } from "@swag-labs/pages/LoginPage";
 
 const baseUrl = process.env.BASE_URL;
 const username = process.env.SWAG_LABS_VALID_USERNAME;
