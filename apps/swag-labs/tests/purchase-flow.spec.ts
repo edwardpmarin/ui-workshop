@@ -1,6 +1,6 @@
 import { test, expect, Page } from "@playwright/test";
-import baseUrl from "../../config/dev";
-import { LoginPage } from "@pages/swag-labs/LoginPage";
+import baseUrl from "../../../config/dev";
+import { LoginPage } from "@swag-labs/pages/LoginPage";
 
 test.describe.configure({ mode: "serial" });
 test.describe("Shopping Cart Testing should login into the page with a valid user and password", () => {

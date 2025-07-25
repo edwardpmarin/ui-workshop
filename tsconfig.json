@@ -5,7 +5,9 @@
     // "moduleResolution": "node",
     "paths": {
       "@pages/*": ["pages/*"],
+      "@swag-labs/*": ["apps/swag-labs/*"],
       "@config/*": ["config/*"]
     }
   },
+   "include": ["apps"]
 }
