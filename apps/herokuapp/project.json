@@ -1,0 +1,14 @@
+{
+  "name": "herokuapp",
+  "targets": {
+    "e2e:dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "ENV=dev playwright test --config=apps/herokuapp/playwright.config.ts",
+        "env": {
+          "ENV": "dev"
+        }
+      }
+    }
+  }
+}
