@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+    nodejs 'node21'  // Same name in Global Tool Configuration
+  }
+
     environment {
         ENV = "dev"
     }
@@ -25,10 +29,10 @@ pipeline {
             }
         }
 
-        stage('Publish Report') {
-            steps {
-                // Put here your HTML reporter or Allure
-            }
-        }
+        // stage('Publish Report') {
+        //     steps {
+        //         // Put here your HTML reporter or Allure
+        //     }
+        // }
     }
 }
