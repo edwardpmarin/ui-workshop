@@ -21,3 +21,7 @@ ENV=dev npx playwright test tests/swag-lagbs/loginUsingFixture.spec.ts
 
 To run only one app in a specific environment
 $ ENV=dev npm run test:swag-labs
+
+Using nx:
+npm run test:swag-labs:dev
+npm run test:herokuapp:dev

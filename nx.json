@@ -1,0 +1,10 @@
+{
+  "targetDefaults": {
+    "test:herokuapp": {
+      "cache": true
+    }
+  },
+  "affected": {
+    "defaultBase": "main"
+  }
+}

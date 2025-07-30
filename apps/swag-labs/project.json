@@ -1,0 +1,14 @@
+{
+  "name": "swag-labs",
+  "targets": {
+    "e2e:dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "playwright test --config=apps/swag-labs/playwright.config.ts",
+        "env": {
+          "ENV": "dev"
+        }
+      }
+    }
+  }
+}
