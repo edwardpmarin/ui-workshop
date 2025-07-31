@@ -29,10 +29,17 @@ pipeline {
             }
         }
 
-        // stage('Publish Report') {
-        //     steps {
-        //         // Put here your HTML reporter or Allure
-        //     }
-        // }
+        stage('Publish Report') {
+            steps {
+                publishHTML([
+                    reportDir: 'playwright-report',
+                    reportFiles: 'index.html', 
+                    reportName: 'Playwright Test Report', 
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true
+                ])
+                }
+        }
     }
 }
