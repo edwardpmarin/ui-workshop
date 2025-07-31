@@ -42,3 +42,6 @@ User: ui-workshop
 Pass: workshop
 Define jenkins Url
 http://localhost:8080/
+
+Install nodesj and configure tool
+install html reporter Plugin
