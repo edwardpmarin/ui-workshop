@@ -26,6 +26,12 @@ Using nx:
 npm run test:swag-labs:dev
 npm run test:herokuapp:dev
 
+Run affected projects with changes from main:
+nx affected --target=e2e:dev
+nx affected --target=e2e:dev //  Affected criteria defaulted to --base=main --head=HEAD
+nx affected --target=e2e --base=origin/main --head=HEAD
+nx show projects --affected // To see affected projects
+
 
 Jenkins:
 Run docker compose
