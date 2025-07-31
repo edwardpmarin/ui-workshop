@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import path from 'path';
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -18,7 +19,10 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ['list'], // Visible in the terminal
-    ['html'] // Generates an HTML report
+    ['html', {
+    outputFolder: path.resolve(__dirname, '../../reports/swag-labs'),
+    open: 'never'
+  }] // Generates an HTML report
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

@@ -1,4 +1,5 @@
     import { test, expect } from '@playwright/test';
+    //Change for nx execution
 
     test('should throw a message error when login data is invalid', async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/login');
