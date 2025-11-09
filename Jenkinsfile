@@ -25,9 +25,9 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'git fetch origin main:origin/main' //Ensure we have the latest main branch
+                sh 'git fetch origin main:origin/get-started' //Ensure we have the latest main branch
                 // sh 'npx nx run swag-labs:e2e:dev'
-                sh 'npx nx affected --target=e2e:dev --base=origin/main --head=HEAD'
+                sh 'npm run test:swag-labs:dev --base=origin/get-started --head=HEAD'
                 // nx affected --target=e2e --base=origin/main --head=HEAD
                 // nx show projects --affected // To see affected projects
 
