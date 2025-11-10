@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:swag-labs": "playwright test --config=apps/swag-labs/playwright.config.ts",
-    "test:herokuapp:dev": "nx e2e:dev herokuapp",
-    "test:swag-labs:dev": "nx e2e:dev swag-labs"
+    "test:herokuapp": "playwright test --config=apps/herokuapp/playwright.config.ts"
   },
   "keywords": [],
   "author": "",

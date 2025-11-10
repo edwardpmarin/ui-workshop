@@ -5,9 +5,9 @@ pipeline {
     nodejs 'node21'  // Same name in Global Tool Configuration
   }
 
-    environment {
-        ENV = "dev"
-    }
+    // environment {
+    //     ENV = "dev"
+    // }
 
     stages {
         stage('Checkout') {
@@ -26,11 +26,8 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh 'git fetch origin main:origin/get-started' //Ensure we have the latest main branch
-                // sh 'npx nx run swag-labs:e2e:dev'
-                sh 'ENV=dev npm run test:swag-labs --base=origin/get-started --head=HEAD'
-                // nx affected --target=e2e --base=origin/main --head=HEAD
-                // nx show projects --affected // To see affected projects
-
+                sh 'ENV=dev npm run test:swag-labs'
+                sh 'ENV=dev npm run test:herokuapp'
             }
         }
 
