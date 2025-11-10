@@ -27,7 +27,7 @@ pipeline {
             steps {
                 sh 'git fetch origin main:origin/get-started' //Ensure we have the latest main branch
                 // sh 'npx nx run swag-labs:e2e:dev'
-                sh 'npm run test:swag-labs --base=origin/get-started --head=HEAD'
+                sh 'ENV=dev npm run test:swag-labs --base=origin/get-started --head=HEAD'
                 // nx affected --target=e2e --base=origin/main --head=HEAD
                 // nx show projects --affected // To see affected projects
 
@@ -57,18 +57,5 @@ pipeline {
                 }
             }
         }
-
-        // stage('Publish Report') {
-        //     steps {
-        //         publishHTML([
-        //             reportDir: 'playwright-report',
-        //             reportFiles: 'index.html', 
-        //             reportName: 'Playwright Test Report', 
-        //             allowMissing: false,
-        //             alwaysLinkToLastBuild: true,
-        //             keepAll: true
-        //         ])
-        //         }
-        // }
     }
 }
