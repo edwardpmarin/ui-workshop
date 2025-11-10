@@ -37,7 +37,7 @@ pipeline {
                 // App lists
                 def reports = [
                     [name: 'Swag Labs Report', path: 'reports/swag-labs'],
-                    //[name: 'HerokuApp Report', path: 'reports/herokuapp']
+                    [name: 'HerokuApp Report', path: 'reports/herokuapp']
                 ]
 
                 // Search for reports
